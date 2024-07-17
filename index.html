@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harumania Shopping CR</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Estilos personalizados */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f6f8fa;
+            color: #24292e;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .navbar {
+            background-color: #343a40;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-brand {
+            color: #f8f9fa;
+            font-weight: bold;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+        .navbar-nav .nav-link {
+            color: #f8f9fa !important;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #20c997 !important;
+        }
+        
+        .card {
+            background-color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        .card-title {
+            color: #343a40;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .card-text {
+            color: #6c757d;
+        }
+        .btn-primary {
+            background-color: #20c997;
+            border-color: #20c997;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #38d9a9;
+            border-color: #38d9a9;
+        }
+        .section-title {
+            color: #343a40;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .social a {
+            color: #343a40;
+            margin-right: 15px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        .social a:hover {
+            color: #20c997;
+            text-decoration: none;
+        }
+        footer {
+            background-color: #343a40;
+            color: #f8f9fa;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto; /* Esto coloca el footer al final */
+            width: 100%;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        @media (max-width: 768px) {
+            .navbar-nav.ml-auto {
+                flex-direction: column;
+            }
+            .navbar-nav.ml-auto .nav-link {
+                text-align: center;
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Harumania Shopping CR</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="clientes.html">Nuestros Clientes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">¿Quiénes Somos?</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="car.html"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a></li>
+   
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <img src="images/banner2.png" alt="">
+
+    <!-- Productos -->
+    <section id="productos" class="py-5">
+        <div class="container">
+            <h2 class="section-title mb-5">Productos</h2>
+            <div class="row">
+              <!-- Producto 1 -->
+<div class="col-md-4 col-sm-6 mb-4">
+    <div class="card">
+        <img src="images/product1.png" class="card-img-top img-fluid" alt="Pelotas deportivas">
+        <div class="card-body">
+            <h5 class="card-title">Pelotas deportivas</h5>
+            <p class="card-text">Pelota para actividades deportivas.</p>
+            <p class="card-text">₡3000</p>
+            <button class="btn btn-primary" onclick="addToCart('Pelotas deportivas', 3000, 'juguetes', 'images/product1.png')">Añadir al Carrito</button>
+        </div>
+    </div>
+</div>
+
+<!-- Producto 2 -->
+<div class="col-md-4 col-sm-6 mb-4">
+    <div class="card">
+        <img src="images/product2.png" class="card-img-top img-fluid" alt="Ratón con catnip">
+        <div class="card-body">
+            <h5 class="card-title">Ratón con catnip</h5>
+            <p class="card-text">Juguete para gatos con catnip.</p>
+            <p class="card-text">₡3500</p>
+            <button class="btn btn-primary" onclick="addToCart('Ratón con catnip', 3500, 'juguetes', 'images/product2.png')">Añadir al Carrito</button>
+        </div>
+    </div>
+</div>
+
+<!-- Producto 3 -->
+<div class="col-md-4 col-sm-6 mb-4">
+    <div class="card">
+        <img src="images/product3.png" class="card-img-top img-fluid" alt="Cepillo vaporizador">
+        <div class="card-body">
+            <h5 class="card-title">Cepillo vaporizador</h5>
+            <p class="card-text">Ideal para el cepillado diario de tu mascota.</p>
+            <p class="card-text">₡4500</p>
+            <button class="btn btn-primary" onclick="addToCart('Cepillo vaporizador', 4500, 'herramientas para aseo', 'images/product3.png')">Añadir al Carrito</button>
+        </div>
+    </div>
+</div>
+
+<!-- Producto 4 -->
+<div class="col-md-4 col-sm-6 mb-4">
+    <div class="card">
+        <img src="images/product4.png" class="card-img-top img-fluid" alt="Ratón con cola de plástico">
+        <div class="card-body">
+            <h5 class="card-title">Ratón con cola de plástico</h5>
+            <p class="card-text">Juguete interactivo para gatos.</p>
+            <p class="card-text">₡2500</p>
+            <button class="btn btn-primary" onclick="addToCart('Ratón con cola de plástico', 2500, 'dispensadores de agua y comida', 'images/product4.png')">Añadir al Carrito</button>
+        </div>
+    </div>
+</div>
+
+<!-- Producto 5 -->
+<div class="col-md-4 col-sm-6 mb-4">
+    <div class="card">
+        <img src="images/product5.png" class="card-img-top img-fluid" alt="Botella de viaje">
+        <div class="card-body">
+            <h5 class="card-title">Botella de viaje</h5>
+            <p class="card-text">Ideal para llevar agua durante los paseos.</p>
+            <p class="card-text">₡6000</p>
+            <button class="btn btn-primary" onclick="addToCart('Botella de viaje', 6000, 'accesorios para viajes', 'images/product5.png')">Añadir al Carrito</button>
+        </div>
+    </div>
+</div>
+<!-- Producto 6 -->
+<div class="col-md-4 col-sm-6 mb-4">
+    <div class="card">
+        <img src="images/product6.png" class="card-img-top img-fluid" alt="Bola gatera de hierba natural">
+        <div class="card-body">
+            <h5 class="card-title">Bola gatera de hierba natural</h5>
+            <p class="card-text">Para relajar a tus felinos..</p>
+            <p class="card-text">₡5000</p>
+            <button class="btn btn-primary" onclick="addToCart('Bola gatera de hierba natural', 5000, 'juguetes', 'images/product6.png')">Añadir al Carrito</button>
+        </div>
+    </div>
+</div>
+
+   <!-- Contacto -->
+   <section id="contact" class="py-5">
+    <div class="container">
+        <h2 class="section-title mb-5">Contáctenos</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6 mb-4">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea class="form-control" id="message" rows="5" placeholder="Escriba su mensaje"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h5>Información de Contacto</h5>
+                <p><i class="fas fa-map-marker-alt"></i> Dirección: San José, Costa Rica <strong>(Tienda 100% virtual, debes llegar con programación)</strong> <a href="https://maps.app.goo.gl/xaKutcatvFaae9FM8" target="_blank">(Abrir en Google Maps)</a></p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp: <a href="https://api.whatsapp.com/send?phone=50687604771&text=" target="_blank">+506 8760 4771</a></p>
+                <p><i class="fas fa-envelope"></i> Correo Electrónico: <a href="mailto:harumaniashopping@gmail.com">harumaniashopping@gmail.com</a></p>
+                <div class="social mt-4">
+                    <a href="https://www.facebook.com/pages/category/Shopping---retail/Harumania-Shopping-CR-100113658640357/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/harumaniashoppingcr?utm_source=qr&igshid=MzNlNGNkZWQ4Mg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@harumaniashopping?_t=8gQvvQF1kKD&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Harumania Shopping CR. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+
+      
+    function addToCart(productName, productPrice, productCategory, productImage) {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const product = { name: productName, price: productPrice, category: productCategory, image: productImage };
+        cart.push(product);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount(cart.length); 
+        alert(`${productName} ha sido añadido al carrito`);
+    }
+   
+    function updateCartCount(count) {
+        document.getElementById('cart-count').textContent = count;
+    }
+
+    </script>
+</body>
+</html>
